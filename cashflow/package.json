@@ -4,10 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run web/index.html"
+    "build": "bun build ./web/index.html --minify --outdir=dist",
+    "deploy": "bun run build && surge dist odia-deuda-cashflow.surge.sh"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "surge": "^0.24.6"
   },
   "peerDependencies": {
     "typescript": "^5"
